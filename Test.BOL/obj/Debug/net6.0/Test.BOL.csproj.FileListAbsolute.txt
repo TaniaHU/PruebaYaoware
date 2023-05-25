@@ -1,0 +1,14 @@
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\bin\Debug\net6.0\Test.BOL.deps.json
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\bin\Debug\net6.0\Test.BOL.runtimeconfig.json
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\bin\Debug\net6.0\Test.BOL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\bin\Debug\net6.0\Test.BOL.pdb
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.csproj.AssemblyReference.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.AssemblyInfoInputs.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.AssemblyInfo.cs
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.csproj.CoreCompileInputs.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\refint\Test.BOL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.pdb
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\Test.BOL.genruntimeconfig.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.BOL\obj\Debug\net6.0\ref\Test.BOL.dll

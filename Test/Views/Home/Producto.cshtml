@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Test.BOL.Modelos.Producto>
+
+@{
+    ViewData["Title"] = "Producto";
+}
+
+<h1> Productos</h1>
+
+<p>
+    <button type="button" class="btn btn-warning" onclick="Agrega(0)">Agregar Producto</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                    <button type="button" class="btn btn-outline-primary" onclick="Agrega(@item.IdProducto)">Editar</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="BorrarProducto(@item.IdProducto)">Borrar</button>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="modal fade" id="ModalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="ContenidoModal">
+            <span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        function Agrega(Id) {
+            var pagina = '@Url.Action("AgregaProducto", "Home")';
+            pagina += "/" + Id;
+            $("#ContenidoModal").load(pagina);
+            $('#ModalEdicion').modal();
+
+            $('#ModalEdicion').on('shown.bs.modal', function () {
+                $(document).off('focusin.modal');
+            });
+        }
+        function GuardaProducto() {
+            var form = $('#FormModalProducto')[0];
+            var data = new FormData(form);
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AgregaProductop", "Home")',
+                enctype: 'multipart/form-data',
+                processData: false,  // Important!
+                contentType: false,
+                cache: false,
+                data: data,
+                timeout: 600000,
+                success: function (data) {
+
+                    if (data.isSuccess) {
+                        alert("Se agrego Producto");
+                        location.reload();
+                    }
+                    else {
+                        alert("Error verifique sus datos");
+                        location.reload();
+                    }
+                },
+            });
+        }
+        function BorrarProducto(id) {
+            var dato = {
+                "Id": id,
+            };
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("BorrarProducto", "Home")',
+                data: dato,
+                success: function (data) {
+                    if (data == true) {
+                        alert("Se elimino Producto");
+                        location.reload();
+                    }
+                    else {
+                        alert("error");
+                        location.reload();
+                    }
+                },
+            });
+        }
+
+    </script>
+}

@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Test.BOL.ModelosSistema.VentaViewModel>
+
+@{
+    ViewData["Title"] = "Ventas";
+}
+
+<h1> Todas las ventas</h1>
+
+<p>
+    <button type="button" class="btn btn-warning" onclick="Agrega(0)">Agregar Venta</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdVenta)
+            </th>
+            <th>
+               Usuario
+            </th>
+            <th>
+                Producto
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+               Estatus
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" onclick="Agrega(@item.IdVenta)">Editar</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="BorrarVenta(@item.IdVenta)">Borrar</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="modal fade" id="ModalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="ContenidoModal">
+            <span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>
+        </div>
+    </div>
+</div>
+
+@*<div class="modal fade" id="ModalEdicion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="ContenidoModal">
+            <span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>
+        </div>
+    </div>
+</div>*@
+@section Scripts {
+    <script type="text/javascript">
+
+        function Agrega(Id) {
+            var pagina = '@Url.Action("AgregaVenta", "Home")';
+            pagina += "/" + Id;
+            $("#ContenidoModal").load(pagina);
+            $('#ModalEdicion').modal();
+
+            $('#ModalEdicion').on('shown.bs.modal', function () {
+                $(document).off('focusin.modal');
+            });
+        }
+        function GuardaVenta() {
+            var form = $('#FormModalVenta')[0];
+            var data = new FormData(form);
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AgregaVenta", "Home")',
+                enctype: 'multipart/form-data',
+                processData: false,  // Important!
+                contentType: false,
+                cache: false,
+                data: data,
+                timeout: 600000,
+                success: function (data) {
+
+                    if (data.isSuccess) {
+                        alert("Se agrego Venta");
+                        location.reload();
+                    }
+                    else {
+                        alert("Error verifique sus datos");
+                        location.reload();
+                    }
+                },
+            });
+        }
+        function BorrarVenta(id) {
+            var dato = {
+                "Id": id,
+            };
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("BorrarVenta", "Home")',
+                data: dato,
+                success: function (data) {
+                    if (data == true) {
+                        alert("Se elimino Venta");
+                        location.reload();
+                    }
+                    else {
+                        alert("error");
+                        location.reload();
+                    }
+                },
+            });
+        }
+       
+    </script>
+}

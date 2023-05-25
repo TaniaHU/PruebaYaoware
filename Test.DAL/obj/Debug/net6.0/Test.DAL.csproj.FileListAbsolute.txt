@@ -1,0 +1,17 @@
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.DAL.deps.json
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.DAL.runtimeconfig.json
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.DAL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.DAL.pdb
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.BOL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\bin\Debug\net6.0\Test.BOL.pdb
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.csproj.AssemblyReference.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.AssemblyInfoInputs.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.AssemblyInfo.cs
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.csproj.CoreCompileInputs.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.csproj.CopyComplete
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\refint\Test.DAL.dll
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.pdb
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\Test.DAL.genruntimeconfig.cache
+D:\VisualProyect\Nueva carpeta\Test.UI\Test.DAL\obj\Debug\net6.0\ref\Test.DAL.dll

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Test.BOL.ModelosSistema.VentaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ventas "Pagados"</h1>
+
+<p>
+    <button type="button" class="btn btn-warning" onclick="NUM()">Numero de registos</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdVenta)
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Producto
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                Estatus
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+    <script type="text/javascript">
+
+        function NUM() {
+
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("Registros", "Home")',
+                success: function (data) {
+                        alert("El numero de registros de ventas es:" + data);
+                        location.reload();
+                },
+            });
+        }
+        
+    </script>
+}
